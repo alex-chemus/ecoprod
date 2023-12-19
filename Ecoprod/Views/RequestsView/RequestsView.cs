@@ -173,9 +173,9 @@ public partial class RequestsView : Form
                 var row = db.getSignelRecord(query);
 
                 productNameLabel.Text = row["productName"].ToString();
-                clientNameLabel.Text = row["clientName"].ToString();
-                creationDateLabel.Text = row["creationDate"].ToString();
-                amountLabel.Text = row["amount"].ToString();
+                clientNameLabel.Text = "Клиент: " + row["clientName"].ToString();
+                creationDateLabel.Text = "Дата создания: " + row["creationDate"].ToString();
+                amountLabel.Text = "Количество: " + row["amount"].ToString();
 
                 requestPanel.Visible = true;
 
@@ -212,6 +212,24 @@ public partial class RequestsView : Form
         editPanel.Visible = false;
 
         refreshRequestsList();
+    }
+
+    private void clientsButton_Click(object sender, EventArgs e)
+    {
+        new ClientsView.ClientsView().Show();
+        Hide();
+    }
+
+    private void productsButton_Click(object sender, EventArgs e)
+    {
+        new ProductsView.ProductsView().Show();
+        Hide();
+    }
+
+    private void ordersButton_Click(object sender, EventArgs e)
+    {
+        new OrdersView.OrdersView().Show();
+        Hide();
     }
 }
 

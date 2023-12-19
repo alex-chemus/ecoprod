@@ -96,8 +96,8 @@ public partial class ClientsView : Form
                 var row = db.getSignelRecord(query);
 
                 clientNameLabel.Text = row["name"].ToString();
-                clientPhoneLabel.Text = row["phone"].ToString();
-                clientEmailLabel.Text = row["email"].ToString();
+                clientPhoneLabel.Text = "Телефон: " + row["phone"].ToString();
+                clientEmailLabel.Text = "Email: " + row["email"].ToString();
 
                 clientPanel.Visible = true;
 

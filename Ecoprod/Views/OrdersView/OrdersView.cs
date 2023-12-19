@@ -201,11 +201,11 @@ public partial class OrdersView : Form
                 var row = db.getSignelRecord(query);
 
                 productNameLabel.Text = row["productName"].ToString();
-                clientNameLabel.Text = row["clientName"].ToString();
-                managerNameLabel.Text = row["managerName"].ToString();
-                creationDateLabel.Text = row["creationDate"].ToString();
-                deadlineLabel.Text = row["deadline"].ToString();
-                amountLabel.Text = row["amount"].ToString();
+                clientNameLabel.Text = "Клиент: " + row["clientName"].ToString();
+                managerNameLabel.Text = "Менеджер: " + row["managerName"].ToString();
+                creationDateLabel.Text = "Дата создания: " + row["creationDate"].ToString();
+                deadlineLabel.Text = "Дата окончания: " + row["deadline"].ToString();
+                amountLabel.Text = "Количество: " + row["amount"].ToString();
 
                 orderPanel.Visible = true;
 
@@ -242,6 +242,24 @@ public partial class OrdersView : Form
         editPanel.Visible = false;
 
         refreshOrdersList();
+    }
+
+    private void clientsButton_Click(object sender, EventArgs e)
+    {
+        new ClientsView.ClientsView().Show();
+        Hide();
+    }
+
+    private void productsButton_Click(object sender, EventArgs e)
+    {
+        new ProductsView.ProductsView().Show();
+        Hide();
+    }
+
+    private void requestsButton_Click(object sender, EventArgs e)
+    {
+        new RequestsView.RequestsView().Show();
+        Hide();
     }
 }
 

@@ -1,4 +1,5 @@
 ﻿using Ecoprod.Helpers;
+using Ecoprod.Views.ClientsView;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -94,7 +95,7 @@ public partial class ProductsView : Form
                 var row = db.getSignelRecord(query);
 
                 productNameLabel.Text = row["name"].ToString();
-                productPriceLabel.Text = row["price"].ToString();
+                productPriceLabel.Text = "Цена: " + row["price"].ToString();
                 productDescriptionTextbox.Text = row["description"].ToString();
                 productDescriptionTextbox.Enabled = false;
 
@@ -146,6 +147,24 @@ public partial class ProductsView : Form
         editPanel.Visible = false;
 
         refreshProductsList();
+    }
+
+    private void button1_Click(object sender, EventArgs e)
+    {
+        new ClientsView.ClientsView().Show();
+        Hide();
+    }
+
+    private void requestsButton_Click(object sender, EventArgs e)
+    {
+        new RequestsView.RequestsView().Show();
+        Hide();
+    }
+
+    private void ordersButton_Click(object sender, EventArgs e)
+    {
+        new OrdersView.OrdersView().Show();
+        Hide();
     }
 }
 

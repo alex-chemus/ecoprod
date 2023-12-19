@@ -30,6 +30,9 @@
         {
             clientsListview = new ListView();
             addPanel = new Panel();
+            label5 = new Label();
+            label4 = new Label();
+            label3 = new Label();
             addButton = new Button();
             addEmailTextbox = new TextBox();
             addPhoneTextbox = new TextBox();
@@ -41,6 +44,9 @@
             clientPhoneLabel = new Label();
             clientNameLabel = new Label();
             editPanel = new Panel();
+            label8 = new Label();
+            label7 = new Label();
+            label6 = new Label();
             editButton = new Button();
             editEmailTextbox = new TextBox();
             editPhoneTextbox = new TextBox();
@@ -49,6 +55,7 @@
             productsButton = new Button();
             requestsButton = new Button();
             ordersButton = new Button();
+            button1 = new Button();
             addPanel.SuspendLayout();
             clientPanel.SuspendLayout();
             editPanel.SuspendLayout();
@@ -56,10 +63,13 @@
             // 
             // clientsListview
             // 
+            clientsListview.BorderStyle = BorderStyle.FixedSingle;
             clientsListview.Cursor = Cursors.Hand;
-            clientsListview.Location = new Point(284, 68);
+            clientsListview.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            clientsListview.ForeColor = Color.Black;
+            clientsListview.Location = new Point(284, 121);
             clientsListview.Name = "clientsListview";
-            clientsListview.Size = new Size(205, 187);
+            clientsListview.Size = new Size(269, 311);
             clientsListview.TabIndex = 0;
             clientsListview.UseCompatibleStateImageBehavior = false;
             clientsListview.View = View.Tile;
@@ -67,21 +77,59 @@
             // 
             // addPanel
             // 
+            addPanel.Controls.Add(label5);
+            addPanel.Controls.Add(label4);
+            addPanel.Controls.Add(label3);
             addPanel.Controls.Add(addButton);
             addPanel.Controls.Add(addEmailTextbox);
             addPanel.Controls.Add(addPhoneTextbox);
             addPanel.Controls.Add(addNameTextbox);
             addPanel.Controls.Add(label1);
-            addPanel.Location = new Point(31, 68);
+            addPanel.Location = new Point(31, 121);
             addPanel.Name = "addPanel";
-            addPanel.Size = new Size(200, 187);
+            addPanel.Size = new Size(229, 316);
             addPanel.TabIndex = 1;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Comic Sans MS", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            label5.Location = new Point(3, 199);
+            label5.Name = "label5";
+            label5.Size = new Size(58, 26);
+            label5.TabIndex = 7;
+            label5.Text = "Email";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Comic Sans MS", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            label4.Location = new Point(3, 116);
+            label4.Name = "label4";
+            label4.Size = new Size(94, 26);
+            label4.TabIndex = 6;
+            label4.Text = "Телефон";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Comic Sans MS", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            label3.Location = new Point(3, 41);
+            label3.Name = "label3";
+            label3.Size = new Size(53, 26);
+            label3.TabIndex = 5;
+            label3.Text = "ФИО";
             // 
             // addButton
             // 
-            addButton.Location = new Point(5, 122);
+            addButton.AutoSize = true;
+            addButton.Cursor = Cursors.Hand;
+            addButton.FlatStyle = FlatStyle.Flat;
+            addButton.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            addButton.ForeColor = Color.FromArgb(52, 152, 62);
+            addButton.Location = new Point(0, 280);
             addButton.Name = "addButton";
-            addButton.Size = new Size(100, 23);
+            addButton.Size = new Size(100, 35);
             addButton.TabIndex = 4;
             addButton.Text = "Добавить";
             addButton.UseVisualStyleBackColor = true;
@@ -89,34 +137,42 @@
             // 
             // addEmailTextbox
             // 
-            addEmailTextbox.Location = new Point(5, 93);
+            addEmailTextbox.Cursor = Cursors.IBeam;
+            addEmailTextbox.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            addEmailTextbox.Location = new Point(0, 228);
             addEmailTextbox.Name = "addEmailTextbox";
             addEmailTextbox.PlaceholderText = "Email";
-            addEmailTextbox.Size = new Size(100, 23);
+            addEmailTextbox.Size = new Size(229, 30);
             addEmailTextbox.TabIndex = 3;
             // 
             // addPhoneTextbox
             // 
-            addPhoneTextbox.Location = new Point(5, 64);
+            addPhoneTextbox.Cursor = Cursors.IBeam;
+            addPhoneTextbox.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            addPhoneTextbox.Location = new Point(0, 145);
             addPhoneTextbox.Name = "addPhoneTextbox";
             addPhoneTextbox.PlaceholderText = "Телефон";
-            addPhoneTextbox.Size = new Size(100, 23);
+            addPhoneTextbox.Size = new Size(229, 30);
             addPhoneTextbox.TabIndex = 2;
             // 
             // addNameTextbox
             // 
-            addNameTextbox.Location = new Point(5, 35);
+            addNameTextbox.Cursor = Cursors.IBeam;
+            addNameTextbox.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            addNameTextbox.Location = new Point(0, 70);
             addNameTextbox.Name = "addNameTextbox";
             addNameTextbox.PlaceholderText = "Имя";
-            addNameTextbox.Size = new Size(100, 23);
+            addNameTextbox.Size = new Size(229, 30);
             addNameTextbox.TabIndex = 1;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(8, 12);
+            label1.Font = new Font("Comic Sans MS", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            label1.ForeColor = Color.FromArgb(52, 152, 62);
+            label1.Location = new Point(3, 3);
             label1.Name = "label1";
-            label1.Size = new Size(106, 15);
+            label1.Size = new Size(182, 27);
             label1.TabIndex = 0;
             label1.Text = "Добавить клиента";
             // 
@@ -126,16 +182,21 @@
             clientPanel.Controls.Add(clientEmailLabel);
             clientPanel.Controls.Add(clientPhoneLabel);
             clientPanel.Controls.Add(clientNameLabel);
-            clientPanel.Location = new Point(530, 68);
+            clientPanel.Location = new Point(284, 454);
             clientPanel.Name = "clientPanel";
-            clientPanel.Size = new Size(200, 174);
+            clientPanel.Size = new Size(269, 151);
             clientPanel.TabIndex = 2;
             // 
             // openEditButton
             // 
-            openEditButton.Location = new Point(3, 80);
+            openEditButton.AutoSize = true;
+            openEditButton.Cursor = Cursors.Hand;
+            openEditButton.FlatStyle = FlatStyle.Flat;
+            openEditButton.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            openEditButton.ForeColor = Color.FromArgb(52, 152, 62);
+            openEditButton.Location = new Point(1, 114);
             openEditButton.Name = "openEditButton";
-            openEditButton.Size = new Size(111, 23);
+            openEditButton.Size = new Size(133, 35);
             openEditButton.TabIndex = 3;
             openEditButton.Text = "Редактировать";
             openEditButton.UseVisualStyleBackColor = true;
@@ -144,90 +205,145 @@
             // clientEmailLabel
             // 
             clientEmailLabel.AutoSize = true;
-            clientEmailLabel.Location = new Point(3, 52);
+            clientEmailLabel.Font = new Font("Comic Sans MS", 14.25F);
+            clientEmailLabel.Location = new Point(0, 74);
             clientEmailLabel.Name = "clientEmailLabel";
-            clientEmailLabel.Size = new Size(88, 15);
+            clientEmailLabel.Size = new Size(148, 26);
             clientEmailLabel.TabIndex = 2;
             clientEmailLabel.Text = "Почта клиента";
             // 
             // clientPhoneLabel
             // 
             clientPhoneLabel.AutoSize = true;
-            clientPhoneLabel.Location = new Point(3, 24);
+            clientPhoneLabel.Font = new Font("Comic Sans MS", 14.25F);
+            clientPhoneLabel.Location = new Point(0, 37);
             clientPhoneLabel.Name = "clientPhoneLabel";
-            clientPhoneLabel.Size = new Size(102, 15);
+            clientPhoneLabel.Size = new Size(173, 26);
             clientPhoneLabel.TabIndex = 1;
             clientPhoneLabel.Text = "Телефон клиента";
             // 
             // clientNameLabel
             // 
             clientNameLabel.AutoSize = true;
+            clientNameLabel.Font = new Font("Comic Sans MS", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            clientNameLabel.ForeColor = Color.FromArgb(52, 152, 62);
             clientNameLabel.Location = new Point(3, 0);
             clientNameLabel.Name = "clientNameLabel";
-            clientNameLabel.Size = new Size(78, 15);
+            clientNameLabel.Size = new Size(129, 26);
             clientNameLabel.TabIndex = 0;
             clientNameLabel.Text = "Имя клиента";
             // 
             // editPanel
             // 
+            editPanel.Controls.Add(label8);
+            editPanel.Controls.Add(label7);
+            editPanel.Controls.Add(label6);
             editPanel.Controls.Add(editButton);
             editPanel.Controls.Add(editEmailTextbox);
             editPanel.Controls.Add(editPhoneTextbox);
             editPanel.Controls.Add(editNameTextbox);
             editPanel.Controls.Add(label2);
-            editPanel.Location = new Point(287, 288);
+            editPanel.Location = new Point(582, 121);
             editPanel.Name = "editPanel";
-            editPanel.Size = new Size(202, 156);
+            editPanel.Size = new Size(319, 342);
             editPanel.TabIndex = 3;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Font = new Font("Comic Sans MS", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            label8.Location = new Point(3, 212);
+            label8.Name = "label8";
+            label8.Size = new Size(58, 26);
+            label8.TabIndex = 8;
+            label8.Text = "Email";
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new Font("Comic Sans MS", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            label7.Location = new Point(3, 122);
+            label7.Name = "label7";
+            label7.Size = new Size(94, 26);
+            label7.TabIndex = 7;
+            label7.Text = "Телефон";
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Comic Sans MS", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            label6.Location = new Point(3, 44);
+            label6.Name = "label6";
+            label6.Size = new Size(53, 26);
+            label6.TabIndex = 6;
+            label6.Text = "ФИО";
             // 
             // editButton
             // 
-            editButton.Location = new Point(3, 114);
+            editButton.AutoSize = true;
+            editButton.Cursor = Cursors.Hand;
+            editButton.FlatStyle = FlatStyle.Flat;
+            editButton.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            editButton.ForeColor = Color.FromArgb(52, 152, 62);
+            editButton.Location = new Point(0, 302);
             editButton.Name = "editButton";
-            editButton.Size = new Size(100, 23);
+            editButton.Size = new Size(131, 35);
             editButton.TabIndex = 4;
-            editButton.Text = "Редактировать";
+            editButton.Text = "Сохранить";
             editButton.UseVisualStyleBackColor = true;
             editButton.Click += editButton_Click;
             // 
             // editEmailTextbox
             // 
-            editEmailTextbox.Location = new Point(3, 85);
+            editEmailTextbox.Cursor = Cursors.IBeam;
+            editEmailTextbox.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            editEmailTextbox.Location = new Point(0, 241);
             editEmailTextbox.Name = "editEmailTextbox";
             editEmailTextbox.PlaceholderText = "Email";
-            editEmailTextbox.Size = new Size(100, 23);
+            editEmailTextbox.Size = new Size(319, 30);
             editEmailTextbox.TabIndex = 3;
             // 
             // editPhoneTextbox
             // 
-            editPhoneTextbox.Location = new Point(3, 56);
+            editPhoneTextbox.Cursor = Cursors.IBeam;
+            editPhoneTextbox.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            editPhoneTextbox.Location = new Point(0, 151);
             editPhoneTextbox.Name = "editPhoneTextbox";
             editPhoneTextbox.PlaceholderText = "Телефон";
-            editPhoneTextbox.Size = new Size(100, 23);
+            editPhoneTextbox.Size = new Size(319, 30);
             editPhoneTextbox.TabIndex = 2;
             // 
             // editNameTextbox
             // 
-            editNameTextbox.Location = new Point(3, 27);
+            editNameTextbox.Cursor = Cursors.IBeam;
+            editNameTextbox.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            editNameTextbox.Location = new Point(0, 73);
             editNameTextbox.Name = "editNameTextbox";
             editNameTextbox.PlaceholderText = "Имя";
-            editNameTextbox.Size = new Size(100, 23);
+            editNameTextbox.Size = new Size(319, 30);
             editNameTextbox.TabIndex = 1;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(3, 9);
+            label2.Font = new Font("Comic Sans MS", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            label2.ForeColor = Color.FromArgb(52, 152, 62);
+            label2.Location = new Point(3, 3);
             label2.Name = "label2";
-            label2.Size = new Size(134, 15);
+            label2.Size = new Size(228, 27);
             label2.TabIndex = 0;
             label2.Text = "Редактировать клиента";
             // 
             // productsButton
             // 
-            productsButton.Location = new Point(31, 23);
+            productsButton.AutoSize = true;
+            productsButton.Cursor = Cursors.Hand;
+            productsButton.FlatStyle = FlatStyle.Flat;
+            productsButton.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            productsButton.ForeColor = Color.FromArgb(52, 152, 62);
+            productsButton.Location = new Point(127, 25);
             productsButton.Name = "productsButton";
-            productsButton.Size = new Size(75, 23);
+            productsButton.Size = new Size(80, 35);
             productsButton.TabIndex = 4;
             productsButton.Text = "Товары";
             productsButton.UseVisualStyleBackColor = true;
@@ -235,9 +351,14 @@
             // 
             // requestsButton
             // 
-            requestsButton.Location = new Point(112, 23);
+            requestsButton.AutoSize = true;
+            requestsButton.Cursor = Cursors.Hand;
+            requestsButton.FlatStyle = FlatStyle.Flat;
+            requestsButton.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            requestsButton.ForeColor = Color.FromArgb(52, 152, 62);
+            requestsButton.Location = new Point(213, 25);
             requestsButton.Name = "requestsButton";
-            requestsButton.Size = new Size(75, 23);
+            requestsButton.Size = new Size(75, 35);
             requestsButton.TabIndex = 5;
             requestsButton.Text = "Заявки";
             requestsButton.UseVisualStyleBackColor = true;
@@ -245,19 +366,41 @@
             // 
             // ordersButton
             // 
-            ordersButton.Location = new Point(193, 23);
+            ordersButton.AutoSize = true;
+            ordersButton.Cursor = Cursors.Hand;
+            ordersButton.FlatStyle = FlatStyle.Flat;
+            ordersButton.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            ordersButton.ForeColor = Color.FromArgb(52, 152, 62);
+            ordersButton.Location = new Point(293, 25);
             ordersButton.Name = "ordersButton";
-            ordersButton.Size = new Size(75, 23);
+            ordersButton.Size = new Size(76, 35);
             ordersButton.TabIndex = 6;
             ordersButton.Text = "Заказы";
             ordersButton.UseVisualStyleBackColor = true;
             ordersButton.Click += ordersButton_Click;
             // 
+            // button1
+            // 
+            button1.AutoSize = true;
+            button1.BackColor = Color.FromArgb(118, 227, 131);
+            button1.Cursor = Cursors.Hand;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            button1.ForeColor = Color.White;
+            button1.Location = new Point(31, 25);
+            button1.Name = "button1";
+            button1.Size = new Size(92, 35);
+            button1.TabIndex = 7;
+            button1.Text = "Клиенты";
+            button1.UseVisualStyleBackColor = false;
+            // 
             // ClientsView
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 497);
+            BackColor = Color.White;
+            ClientSize = new Size(972, 805);
+            Controls.Add(button1);
             Controls.Add(ordersButton);
             Controls.Add(requestsButton);
             Controls.Add(productsButton);
@@ -275,6 +418,7 @@
             editPanel.ResumeLayout(false);
             editPanel.PerformLayout();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -300,5 +444,12 @@
         private Button productsButton;
         private Button requestsButton;
         private Button ordersButton;
+        private Label label3;
+        private Button button1;
+        private Label label5;
+        private Label label4;
+        private Label label8;
+        private Label label7;
+        private Label label6;
     }
 }

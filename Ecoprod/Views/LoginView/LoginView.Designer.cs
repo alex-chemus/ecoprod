@@ -39,50 +39,63 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(262, 107);
+            label1.Font = new Font("Comic Sans MS", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            label1.Location = new Point(173, 75);
             label1.Name = "label1";
-            label1.Size = new Size(40, 15);
+            label1.Size = new Size(74, 30);
             label1.TabIndex = 0;
             label1.Text = "Войти";
             // 
             // loginTextbox
             // 
-            loginTextbox.Location = new Point(309, 138);
+            loginTextbox.Cursor = Cursors.IBeam;
+            loginTextbox.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            loginTextbox.Location = new Point(173, 127);
             loginTextbox.Name = "loginTextbox";
-            loginTextbox.Size = new Size(100, 23);
+            loginTextbox.Size = new Size(139, 30);
             loginTextbox.TabIndex = 1;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(265, 141);
+            label2.Font = new Font("Comic Sans MS", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            label2.Location = new Point(97, 127);
             label2.Name = "label2";
-            label2.Size = new Size(41, 15);
+            label2.Size = new Size(69, 26);
             label2.TabIndex = 2;
             label2.Text = "Логин";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(265, 170);
+            label3.Font = new Font("Comic Sans MS", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            label3.Location = new Point(85, 185);
             label3.Name = "label3";
-            label3.Size = new Size(41, 15);
+            label3.Size = new Size(81, 26);
             label3.TabIndex = 4;
-            label3.Text = "Логин";
+            label3.Text = "Пароль";
             // 
             // passwordTextbox
             // 
-            passwordTextbox.Location = new Point(309, 167);
+            passwordTextbox.Cursor = Cursors.IBeam;
+            passwordTextbox.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            passwordTextbox.Location = new Point(173, 184);
             passwordTextbox.Name = "passwordTextbox";
-            passwordTextbox.Size = new Size(100, 23);
+            passwordTextbox.Size = new Size(139, 30);
             passwordTextbox.TabIndex = 3;
             passwordTextbox.UseSystemPasswordChar = true;
             // 
             // loginButton
             // 
-            loginButton.Location = new Point(262, 205);
+            loginButton.AutoSize = true;
+            loginButton.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            loginButton.Cursor = Cursors.Hand;
+            loginButton.FlatStyle = FlatStyle.Flat;
+            loginButton.Font = new Font("Comic Sans MS", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            loginButton.ForeColor = Color.FromArgb(52, 152, 62);
+            loginButton.Location = new Point(173, 239);
             loginButton.Name = "loginButton";
-            loginButton.Size = new Size(75, 23);
+            loginButton.Size = new Size(80, 38);
             loginButton.TabIndex = 5;
             loginButton.Text = "Войти";
             loginButton.UseVisualStyleBackColor = true;
@@ -92,7 +105,8 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            BackColor = Color.White;
+            ClientSize = new Size(480, 385);
             Controls.Add(loginButton);
             Controls.Add(label3);
             Controls.Add(passwordTextbox);
