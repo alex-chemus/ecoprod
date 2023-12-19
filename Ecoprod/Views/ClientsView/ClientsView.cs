@@ -29,6 +29,7 @@ public partial class ClientsView : Form
         {
             openEditButton.Visible = false;
             addPanel.Visible = false;
+            deleteButton.Visible = false;
         }
     }
 

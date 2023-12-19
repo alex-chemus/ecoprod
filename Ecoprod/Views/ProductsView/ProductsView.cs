@@ -28,6 +28,7 @@ public partial class ProductsView : Form
         {
             openEditButton.Visible = false;
             addPanel.Visible = false;
+            deleteButton.Visible = false;
         }
     }
 
