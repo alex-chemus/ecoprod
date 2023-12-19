@@ -121,9 +121,9 @@
             label3.Font = new Font("Comic Sans MS", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
             label3.Location = new Point(3, 41);
             label3.Name = "label3";
-            label3.Size = new Size(53, 26);
+            label3.Size = new Size(98, 26);
             label3.TabIndex = 5;
-            label3.Text = "ФИО";
+            label3.Text = "Название";
             // 
             // addButton
             // 
@@ -166,7 +166,7 @@
             addNameTextbox.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
             addNameTextbox.Location = new Point(0, 70);
             addNameTextbox.Name = "addNameTextbox";
-            addNameTextbox.PlaceholderText = "Имя";
+            addNameTextbox.PlaceholderText = "Название";
             addNameTextbox.Size = new Size(229, 30);
             addNameTextbox.TabIndex = 1;
             // 
@@ -250,9 +250,9 @@
             clientNameLabel.ForeColor = Color.FromArgb(52, 152, 62);
             clientNameLabel.Location = new Point(3, 0);
             clientNameLabel.Name = "clientNameLabel";
-            clientNameLabel.Size = new Size(129, 26);
+            clientNameLabel.Size = new Size(177, 26);
             clientNameLabel.TabIndex = 0;
-            clientNameLabel.Text = "Имя клиента";
+            clientNameLabel.Text = "Название клиента";
             // 
             // editPanel
             // 
@@ -295,9 +295,9 @@
             label6.Font = new Font("Comic Sans MS", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
             label6.Location = new Point(3, 44);
             label6.Name = "label6";
-            label6.Size = new Size(53, 26);
+            label6.Size = new Size(98, 26);
             label6.TabIndex = 6;
-            label6.Text = "ФИО";
+            label6.Text = "Название";
             // 
             // editButton
             // 
@@ -340,7 +340,7 @@
             editNameTextbox.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
             editNameTextbox.Location = new Point(0, 73);
             editNameTextbox.Name = "editNameTextbox";
-            editNameTextbox.PlaceholderText = "Имя";
+            editNameTextbox.PlaceholderText = "Название";
             editNameTextbox.Size = new Size(319, 30);
             editNameTextbox.TabIndex = 1;
             // 
