@@ -65,6 +65,7 @@
             ordersButton = new Button();
             requestsButton = new Button();
             productsButton = new Button();
+            deleteButton = new Button();
             editPanel.SuspendLayout();
             orderPanel.SuspendLayout();
             addPanel.SuspendLayout();
@@ -194,6 +195,7 @@
             // 
             // orderPanel
             // 
+            orderPanel.Controls.Add(deleteButton);
             orderPanel.Controls.Add(managerNameLabel);
             orderPanel.Controls.Add(deadlineLabel);
             orderPanel.Controls.Add(clientNameLabel);
@@ -430,6 +432,7 @@
             // ordersListView
             // 
             ordersListView.Cursor = Cursors.Hand;
+            ordersListView.Font = new Font("Comic Sans MS", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
             ordersListView.Location = new Point(319, 117);
             ordersListView.Name = "ordersListView";
             ordersListView.Size = new Size(309, 187);
@@ -500,12 +503,27 @@
             productsButton.UseVisualStyleBackColor = false;
             productsButton.Click += productsButton_Click;
             // 
+            // deleteButton
+            // 
+            deleteButton.AutoSize = true;
+            deleteButton.Cursor = Cursors.Hand;
+            deleteButton.FlatStyle = FlatStyle.Flat;
+            deleteButton.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            deleteButton.ForeColor = Color.FromArgb(52, 152, 62);
+            deleteButton.Location = new Point(175, 248);
+            deleteButton.Name = "deleteButton";
+            deleteButton.Size = new Size(131, 35);
+            deleteButton.TabIndex = 9;
+            deleteButton.Text = "Удалить";
+            deleteButton.UseVisualStyleBackColor = true;
+            deleteButton.Click += deleteButton_Click;
+            // 
             // OrdersView
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(1114, 797);
+            ClientSize = new Size(1114, 786);
             Controls.Add(clientsButton);
             Controls.Add(ordersButton);
             Controls.Add(requestsButton);
@@ -568,5 +586,6 @@
         private Label label10;
         private Label label9;
         private Label label8;
+        private Button deleteButton;
     }
 }

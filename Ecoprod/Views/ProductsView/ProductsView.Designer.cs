@@ -57,6 +57,7 @@
             ordersButton = new Button();
             requestsButton = new Button();
             productsButton = new Button();
+            deleteButton = new Button();
             editPanel.SuspendLayout();
             productPanel.SuspendLayout();
             addPanel.SuspendLayout();
@@ -162,6 +163,7 @@
             // 
             // productPanel
             // 
+            productPanel.Controls.Add(deleteButton);
             productPanel.Controls.Add(label6);
             productPanel.Controls.Add(productDescriptionTextbox);
             productPanel.Controls.Add(openEditButton);
@@ -331,6 +333,7 @@
             // productsListView
             // 
             productsListView.Cursor = Cursors.Hand;
+            productsListView.Font = new Font("Comic Sans MS", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
             productsListView.Location = new Point(295, 122);
             productsListView.Name = "productsListView";
             productsListView.Size = new Size(306, 323);
@@ -400,6 +403,20 @@
             productsButton.Text = "Товары";
             productsButton.UseVisualStyleBackColor = false;
             // 
+            // deleteButton
+            // 
+            deleteButton.AutoSize = true;
+            deleteButton.FlatStyle = FlatStyle.Flat;
+            deleteButton.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            deleteButton.ForeColor = Color.FromArgb(52, 152, 62);
+            deleteButton.Location = new Point(172, 240);
+            deleteButton.Name = "deleteButton";
+            deleteButton.Size = new Size(131, 35);
+            deleteButton.TabIndex = 6;
+            deleteButton.Text = "Удалить";
+            deleteButton.UseVisualStyleBackColor = true;
+            deleteButton.Click += deleteButton_Click;
+            // 
             // ProductsView
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -458,5 +475,6 @@
         private Label label7;
         private Label label9;
         private Label label8;
+        private Button deleteButton;
     }
 }

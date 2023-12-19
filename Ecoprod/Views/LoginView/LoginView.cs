@@ -26,7 +26,12 @@ public partial class LoginView : Form
     private void loginButton_Click(object sender, EventArgs e)
     {
         var login = loginTextbox.Text;
+        var loginValid = StringFormatter.Check("Логин", login, 20);
+
         var password = passwordTextbox.Text;
+        var passwordValid = StringFormatter.Check("Пароль", password, 20);
+
+        if (!loginValid || !passwordValid) return;
 
         string query = $"SELECT * FROM Manager WHERE " +
             $"login = '{login}' AND password = '{password}'";

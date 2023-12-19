@@ -55,8 +55,23 @@ public partial class ProductsView : Form
     private void addButton_Click(object sender, EventArgs e)
     {
         var name = addNameTextbox.Text;
-        var price = addPriceTextbox.Text;
+        var nameValid = StringFormatter.Check("Название", name, 100);
+
+        int price = 0;
+        bool priceValid = true;
+        try
+        {
+            price = Int32.Parse(addPriceTextbox.Text);
+        }
+        catch
+        {
+            priceValid = false;
+        }
+
         var description = addDescriptionTextbox.Text;
+        var descriptionValid = StringFormatter.Check("Описание", description, 250);
+
+        if (!nameValid || !priceValid || !descriptionValid) return;
 
         string query = $"INSERT INTO Product (" +
             $"name, price, description" +
@@ -124,12 +139,27 @@ public partial class ProductsView : Form
     private void editButton_Click(object sender, EventArgs e)
     {
         var name = editNameTextbox.Text;
-        var price = editPriceTextbox.Text;
+        var nameValid = StringFormatter.Check("Название", name, 100);
+
+        int price = 0;
+        bool priceValid = true;
+        try
+        {
+            price = Int32.Parse(editPriceTextbox.Text);
+        }
+        catch
+        {
+            priceValid = false;
+        }
+
         var description = editDescriptionTextbox.Text;
+        var descriptionValid = StringFormatter.Check("Описание", description, 250);
+
+        if (!nameValid || !priceValid || !descriptionValid) return;
 
         string query = $"UPDATE Product SET " +
             $"name = '{name}', " +
-            $"price = {price}, " +
+            $"price = {price.ToString()}, " +
             $"description = '{description}' " +
             $"WHERE id = {currentProductId}";
 
@@ -165,6 +195,20 @@ public partial class ProductsView : Form
     {
         new OrdersView.OrdersView().Show();
         Hide();
+    }
+
+    private void deleteButton_Click(object sender, EventArgs e)
+    {
+        var result = MessageBox.Show("Удалить товар?", "Удалить товар?", MessageBoxButtons.YesNo);
+
+        if (result == DialogResult.Yes)
+        {
+            string query = $"DELETE FROM Product WHERE id = {currentProductId}";
+            db.InsertRecord(query);
+            productPanel.Visible = false;
+            editPanel.Visible = false;
+            refreshProductsList();
+        }
     }
 }
 

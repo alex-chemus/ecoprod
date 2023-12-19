@@ -44,6 +44,7 @@
             clientPhoneLabel = new Label();
             clientNameLabel = new Label();
             editPanel = new Panel();
+            deleteButton = new Button();
             label8 = new Label();
             label7 = new Label();
             label6 = new Label();
@@ -178,6 +179,7 @@
             // 
             // clientPanel
             // 
+            clientPanel.Controls.Add(deleteButton);
             clientPanel.Controls.Add(openEditButton);
             clientPanel.Controls.Add(clientEmailLabel);
             clientPanel.Controls.Add(clientPhoneLabel);
@@ -206,7 +208,7 @@
             // 
             clientEmailLabel.AutoSize = true;
             clientEmailLabel.Font = new Font("Comic Sans MS", 14.25F);
-            clientEmailLabel.Location = new Point(0, 74);
+            clientEmailLabel.Location = new Point(3, 74);
             clientEmailLabel.Name = "clientEmailLabel";
             clientEmailLabel.Size = new Size(148, 26);
             clientEmailLabel.TabIndex = 2;
@@ -216,7 +218,7 @@
             // 
             clientPhoneLabel.AutoSize = true;
             clientPhoneLabel.Font = new Font("Comic Sans MS", 14.25F);
-            clientPhoneLabel.Location = new Point(0, 37);
+            clientPhoneLabel.Location = new Point(3, 37);
             clientPhoneLabel.Name = "clientPhoneLabel";
             clientPhoneLabel.Size = new Size(173, 26);
             clientPhoneLabel.TabIndex = 1;
@@ -247,6 +249,21 @@
             editPanel.Name = "editPanel";
             editPanel.Size = new Size(319, 342);
             editPanel.TabIndex = 3;
+            // 
+            // deleteButton
+            // 
+            deleteButton.AutoSize = true;
+            deleteButton.Cursor = Cursors.Hand;
+            deleteButton.FlatStyle = FlatStyle.Flat;
+            deleteButton.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            deleteButton.ForeColor = Color.FromArgb(52, 152, 62);
+            deleteButton.Location = new Point(166, 114);
+            deleteButton.Name = "deleteButton";
+            deleteButton.Size = new Size(100, 35);
+            deleteButton.TabIndex = 8;
+            deleteButton.Text = "Удалить";
+            deleteButton.UseVisualStyleBackColor = true;
+            deleteButton.Click += deleteButton_Click;
             // 
             // label8
             // 
@@ -451,5 +468,6 @@
         private Label label8;
         private Label label7;
         private Label label6;
+        private Button deleteButton;
     }
 }

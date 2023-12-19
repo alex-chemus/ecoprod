@@ -51,13 +51,34 @@ public partial class ClientsView : Form
     private void addButton_Click(object sender, EventArgs e)
     {
         var name = addNameTextbox.Text;
-        var phone = addPhoneTextbox.Text;
+        bool nameValid = StringFormatter.Check("ФИО", name, 100);
+
+        long phone = 0;
+        bool phoneValid = true;
+        try
+        {
+            if (addPhoneTextbox.Text.Length != 11)
+            {
+                Debug.WriteLine("invalid phone length");
+                throw new Exception();
+            }
+            phone = (long)Convert.ToDouble(addPhoneTextbox.Text);
+        }
+        catch
+        {
+            Debug.WriteLine("invalid phone " + addPhoneTextbox.Text.Length);
+            phoneValid = false;
+        }
+
         var email = addEmailTextbox.Text;
+        var emailValid = StringFormatter.Check("Email", email, 30);
+
+        if (!nameValid || !phoneValid || !emailValid) return;
 
         string query = $"INSERT INTO Client (" +
             $"name, phone, email" +
             $") VALUES (" +
-            $"'{name}', {phone}, '{email}')";
+            $"'{name}', {phone.ToString()}, '{email}')";
 
         try
         {
@@ -124,8 +145,24 @@ public partial class ClientsView : Form
     private void editButton_Click(object sender, EventArgs e)
     {
         var name = editNameTextbox.Text;
-        var phone = editPhoneTextbox.Text;
+        bool nameValid = StringFormatter.Check("ФИО", name, 100);
+
+        long phone = 0;
+        bool phoneValid = true;
+        try
+        {
+            if (editPhoneTextbox.Text.Length != 11) throw new Exception();
+            phone = (long)Convert.ToDouble(editPhoneTextbox.Text);
+        }
+        catch
+        {
+            phoneValid = false;
+        }
+
         var email = editEmailTextbox.Text;
+        var emailValid = StringFormatter.Check("Email", email, 30);
+
+        if (!nameValid || !phoneValid || !emailValid) return;
 
         string query = $"UPDATE Client SET " +
             $"name = '{name}', " +
@@ -165,6 +202,20 @@ public partial class ClientsView : Form
     {
         new OrdersView.OrdersView().Show();
         this.Hide();
+    }
+
+    private void deleteButton_Click(object sender, EventArgs e)
+    {
+        var result = MessageBox.Show("Удалить клиента?", "Удалить клиента?", MessageBoxButtons.YesNo);
+    
+        if (result == DialogResult.Yes)
+        {
+            string query = $"DELETE FROM Client WHERE id = {currentClientId}";
+            db.InsertRecord(query);
+            clientPanel.Visible = false;
+            editPanel.Visible = false;
+            refreshClientsList();
+        }
     }
 }
 

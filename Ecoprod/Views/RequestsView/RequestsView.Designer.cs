@@ -61,6 +61,7 @@
             ordersButton = new Button();
             requestsButton = new Button();
             productsButton = new Button();
+            deleteButton = new Button();
             editPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)editAmountNumeric).BeginInit();
             requestPanel.SuspendLayout();
@@ -188,14 +189,15 @@
             // 
             // requestPanel
             // 
+            requestPanel.Controls.Add(deleteButton);
             requestPanel.Controls.Add(clientNameLabel);
             requestPanel.Controls.Add(creationDateLabel);
             requestPanel.Controls.Add(amountLabel);
             requestPanel.Controls.Add(openEditButton);
             requestPanel.Controls.Add(productNameLabel);
-            requestPanel.Location = new Point(321, 325);
+            requestPanel.Location = new Point(308, 325);
             requestPanel.Name = "requestPanel";
-            requestPanel.Size = new Size(229, 220);
+            requestPanel.Size = new Size(253, 220);
             requestPanel.TabIndex = 10;
             requestPanel.Visible = false;
             // 
@@ -378,9 +380,10 @@
             // requestsListView
             // 
             requestsListView.Cursor = Cursors.Hand;
-            requestsListView.Location = new Point(321, 114);
+            requestsListView.Font = new Font("Comic Sans MS", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            requestsListView.Location = new Point(308, 114);
             requestsListView.Name = "requestsListView";
-            requestsListView.Size = new Size(229, 187);
+            requestsListView.Size = new Size(253, 187);
             requestsListView.TabIndex = 8;
             requestsListView.UseCompatibleStateImageBehavior = false;
             requestsListView.View = View.Tile;
@@ -446,6 +449,21 @@
             productsButton.Text = "Товары";
             productsButton.UseVisualStyleBackColor = true;
             productsButton.Click += productsButton_Click;
+            // 
+            // deleteButton
+            // 
+            deleteButton.AutoSize = true;
+            deleteButton.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            deleteButton.FlatStyle = FlatStyle.Flat;
+            deleteButton.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            deleteButton.ForeColor = Color.FromArgb(52, 152, 62);
+            deleteButton.Location = new Point(165, 182);
+            deleteButton.Name = "deleteButton";
+            deleteButton.Size = new Size(85, 35);
+            deleteButton.TabIndex = 7;
+            deleteButton.Text = "Удалить";
+            deleteButton.UseVisualStyleBackColor = true;
+            deleteButton.Click += deleteButton_Click;
             // 
             // RequestsView
             // 
@@ -516,5 +534,6 @@
         private Label label9;
         private Label label8;
         private Label label7;
+        private Button deleteButton;
     }
 }

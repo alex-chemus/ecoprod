@@ -39,7 +39,7 @@ public partial class OrdersView : Form
 
         foreach (DataRow row in table.Rows)
         {
-            string requestString = row["name"].ToString() + " " + row["amount"];
+            string requestString = row["name"].ToString() + " " + row["amount"] + " шт.";
             var listItem = new ListViewItem(requestString);
             listItem.Tag = row["id"].ToString();
             ordersListView.Items.Add(listItem);
@@ -260,6 +260,20 @@ public partial class OrdersView : Form
     {
         new RequestsView.RequestsView().Show();
         Hide();
+    }
+
+    private void deleteButton_Click(object sender, EventArgs e)
+    {
+        var result = MessageBox.Show("Удалить заказ?", "Удалить заказ?", MessageBoxButtons.YesNo);
+
+        if (result == DialogResult.Yes)
+        {
+            string query = $"DELETE FROM Order WHERE id = {currentOrderId}";
+            db.InsertRecord(query);
+            orderPanel.Visible = false;
+            editPanel.Visible = false;
+            refreshOrdersList();
+        }
     }
 }
 
