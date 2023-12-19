@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RequestsView));
             editPanel = new Panel();
             label10 = new Label();
             label9 = new Label();
@@ -40,6 +41,7 @@
             editClientCombobox = new ComboBox();
             editProductCombobox = new ComboBox();
             requestPanel = new Panel();
+            deleteButton = new Button();
             clientNameLabel = new Label();
             creationDateLabel = new Label();
             amountLabel = new Label();
@@ -61,12 +63,14 @@
             ordersButton = new Button();
             requestsButton = new Button();
             productsButton = new Button();
-            deleteButton = new Button();
+            pictureBox1 = new PictureBox();
+            label11 = new Label();
             editPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)editAmountNumeric).BeginInit();
             requestPanel.SuspendLayout();
             addPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)addAmountNumeric).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // editPanel
@@ -200,6 +204,21 @@
             requestPanel.Size = new Size(253, 220);
             requestPanel.TabIndex = 10;
             requestPanel.Visible = false;
+            // 
+            // deleteButton
+            // 
+            deleteButton.AutoSize = true;
+            deleteButton.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            deleteButton.FlatStyle = FlatStyle.Flat;
+            deleteButton.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            deleteButton.ForeColor = Color.FromArgb(52, 152, 62);
+            deleteButton.Location = new Point(165, 182);
+            deleteButton.Name = "deleteButton";
+            deleteButton.Size = new Size(85, 35);
+            deleteButton.TabIndex = 7;
+            deleteButton.Text = "Удалить";
+            deleteButton.UseVisualStyleBackColor = true;
+            deleteButton.Click += deleteButton_Click;
             // 
             // clientNameLabel
             // 
@@ -450,20 +469,26 @@
             productsButton.UseVisualStyleBackColor = true;
             productsButton.Click += productsButton_Click;
             // 
-            // deleteButton
+            // pictureBox1
             // 
-            deleteButton.AutoSize = true;
-            deleteButton.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            deleteButton.FlatStyle = FlatStyle.Flat;
-            deleteButton.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            deleteButton.ForeColor = Color.FromArgb(52, 152, 62);
-            deleteButton.Location = new Point(165, 182);
-            deleteButton.Name = "deleteButton";
-            deleteButton.Size = new Size(85, 35);
-            deleteButton.TabIndex = 7;
-            deleteButton.Text = "Удалить";
-            deleteButton.UseVisualStyleBackColor = true;
-            deleteButton.Click += deleteButton_Click;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(807, 26);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(53, 35);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 16;
+            pictureBox1.TabStop = false;
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Font = new Font("Comic Sans MS", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            label11.ForeColor = Color.FromArgb(52, 152, 62);
+            label11.Location = new Point(714, 30);
+            label11.Name = "label11";
+            label11.Size = new Size(88, 26);
+            label11.TabIndex = 17;
+            label11.Text = "Экопрод";
             // 
             // RequestsView
             // 
@@ -471,6 +496,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(932, 786);
+            Controls.Add(label11);
+            Controls.Add(pictureBox1);
             Controls.Add(clientsButton);
             Controls.Add(ordersButton);
             Controls.Add(requestsButton);
@@ -480,7 +507,7 @@
             Controls.Add(addPanel);
             Controls.Add(requestsListView);
             Name = "RequestsView";
-            Text = "RequestsView";
+            Text = "Товары";
             Load += RequestsView_Load;
             editPanel.ResumeLayout(false);
             editPanel.PerformLayout();
@@ -490,6 +517,7 @@
             addPanel.ResumeLayout(false);
             addPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)addAmountNumeric).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -535,5 +563,7 @@
         private Label label8;
         private Label label7;
         private Button deleteButton;
+        private PictureBox pictureBox1;
+        private Label label11;
     }
 }

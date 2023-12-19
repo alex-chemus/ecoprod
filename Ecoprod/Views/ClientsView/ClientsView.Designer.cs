@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ClientsView));
             clientsListview = new ListView();
             addPanel = new Panel();
             label5 = new Label();
@@ -39,12 +40,12 @@
             addNameTextbox = new TextBox();
             label1 = new Label();
             clientPanel = new Panel();
+            deleteButton = new Button();
             openEditButton = new Button();
             clientEmailLabel = new Label();
             clientPhoneLabel = new Label();
             clientNameLabel = new Label();
             editPanel = new Panel();
-            deleteButton = new Button();
             label8 = new Label();
             label7 = new Label();
             label6 = new Label();
@@ -57,9 +58,12 @@
             requestsButton = new Button();
             ordersButton = new Button();
             button1 = new Button();
+            label11 = new Label();
+            pictureBox1 = new PictureBox();
             addPanel.SuspendLayout();
             clientPanel.SuspendLayout();
             editPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // clientsListview
@@ -189,6 +193,21 @@
             clientPanel.Size = new Size(269, 151);
             clientPanel.TabIndex = 2;
             // 
+            // deleteButton
+            // 
+            deleteButton.AutoSize = true;
+            deleteButton.Cursor = Cursors.Hand;
+            deleteButton.FlatStyle = FlatStyle.Flat;
+            deleteButton.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            deleteButton.ForeColor = Color.FromArgb(52, 152, 62);
+            deleteButton.Location = new Point(166, 114);
+            deleteButton.Name = "deleteButton";
+            deleteButton.Size = new Size(100, 35);
+            deleteButton.TabIndex = 8;
+            deleteButton.Text = "Удалить";
+            deleteButton.UseVisualStyleBackColor = true;
+            deleteButton.Click += deleteButton_Click;
+            // 
             // openEditButton
             // 
             openEditButton.AutoSize = true;
@@ -249,21 +268,6 @@
             editPanel.Name = "editPanel";
             editPanel.Size = new Size(319, 342);
             editPanel.TabIndex = 3;
-            // 
-            // deleteButton
-            // 
-            deleteButton.AutoSize = true;
-            deleteButton.Cursor = Cursors.Hand;
-            deleteButton.FlatStyle = FlatStyle.Flat;
-            deleteButton.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            deleteButton.ForeColor = Color.FromArgb(52, 152, 62);
-            deleteButton.Location = new Point(166, 114);
-            deleteButton.Name = "deleteButton";
-            deleteButton.Size = new Size(100, 35);
-            deleteButton.TabIndex = 8;
-            deleteButton.Text = "Удалить";
-            deleteButton.UseVisualStyleBackColor = true;
-            deleteButton.Click += deleteButton_Click;
             // 
             // label8
             // 
@@ -411,12 +415,35 @@
             button1.Text = "Клиенты";
             button1.UseVisualStyleBackColor = false;
             // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Font = new Font("Comic Sans MS", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            label11.ForeColor = Color.FromArgb(52, 152, 62);
+            label11.Location = new Point(755, 29);
+            label11.Name = "label11";
+            label11.Size = new Size(88, 26);
+            label11.TabIndex = 19;
+            label11.Text = "Экопрод";
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(848, 25);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(53, 35);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 18;
+            pictureBox1.TabStop = false;
+            // 
             // ClientsView
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(972, 805);
+            Controls.Add(label11);
+            Controls.Add(pictureBox1);
             Controls.Add(button1);
             Controls.Add(ordersButton);
             Controls.Add(requestsButton);
@@ -426,7 +453,7 @@
             Controls.Add(addPanel);
             Controls.Add(clientsListview);
             Name = "ClientsView";
-            Text = "ClientsView";
+            Text = "Клиенты";
             Load += ClientsView_Load;
             addPanel.ResumeLayout(false);
             addPanel.PerformLayout();
@@ -434,6 +461,7 @@
             clientPanel.PerformLayout();
             editPanel.ResumeLayout(false);
             editPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -469,5 +497,7 @@
         private Label label7;
         private Label label6;
         private Button deleteButton;
+        private Label label11;
+        private PictureBox pictureBox1;
     }
 }

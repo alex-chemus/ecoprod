@@ -114,7 +114,7 @@
             Controls.Add(loginTextbox);
             Controls.Add(label1);
             Name = "LoginView";
-            Text = "LoginView";
+            Text = "Войти";
             ResumeLayout(false);
             PerformLayout();
         }
